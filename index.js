@@ -85,11 +85,19 @@ const play = (playerHand) => {
 const playRound = (playerHand) => {
   if (typeof playerHand !== 'string') {
     alert('Please enter "rock", "paper" or "scissors".')
+    document.location.reload()
   } else if (!possiblePlays.includes(playerHand.toLowerCase())) {
     alert('Please enter "rock", "paper" or "scissors".')
+    document.location.reload()
   } else {
     for (let i = 0; i < 5; i++) {
       play(playerHand)
     }
   }
 }
+
+const gameStart = () => {
+  let playerHand = prompt('Please enter "Rock", "Paper" or "Scissors."')
+  return playRound(playerHand)
+}
+gameStart()
