@@ -4,6 +4,9 @@ const generateComputerHand = () => {
   return possiblePlays[Math.floor(Math.random() * 3)]
 }
 
+let userScore = 0
+let computerScore = 0
+
 const calculateWinner = (playerHand, computerHand) => {
   switch (playerHand.toLowerCase()) {
     case 'rock':
@@ -13,12 +16,14 @@ const calculateWinner = (playerHand, computerHand) => {
             computerHand.charAt(0).toUpperCase() + computerHand.slice(1)
           }, you win!`
         )
+        userScore++
       } else if (computerHand === 'paper') {
         console.log(
           `Computer picked ${
             computerHand.charAt(0).toUpperCase() + computerHand.slice(1)
           }, you lose.`
         )
+        computerScore++
       } else {
         console.log(
           `Computer picked ${
@@ -34,12 +39,14 @@ const calculateWinner = (playerHand, computerHand) => {
             computerHand.charAt(0).toUpperCase() + computerHand.slice(1)
           }, you win!`
         )
+        userScore++
       } else if (computerHand === 'scissors') {
         console.log(
           `Computer picked ${
             computerHand.charAt(0).toUpperCase() + computerHand.slice(1)
           }, you lose.`
         )
+        computerScore++
       } else {
         console.log(
           `Computer picked ${
@@ -55,12 +62,14 @@ const calculateWinner = (playerHand, computerHand) => {
             computerHand.charAt(0).toUpperCase() + computerHand.slice(1)
           }, you win!`
         )
+        userScore++
       } else if (computerHand === 'rock') {
         console.log(
           `Computer picked ${
             computerHand.charAt(0).toUpperCase() + computerHand.slice(1)
           }, you lose.`
         )
+        computerScore++
       } else {
         console.log(
           `Computer picked ${
@@ -87,6 +96,7 @@ const playRound = (playerHand) => {
     for (let i = 0; i < 5; i++) {
       play(playerHand)
     }
+    console.log(`User: ${userScore} | Computer: ${computerScore}`)
   }
 }
 
