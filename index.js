@@ -1,6 +1,6 @@
-const generateComputerHand = () => {
-  let possiblePlays = ['rock', 'paper', 'scissors']
+const possiblePlays = ['rock', 'paper', 'scissors']
 
+const generateComputerHand = () => {
   return possiblePlays[Math.floor(Math.random() * 3)]
 }
 
@@ -73,7 +73,6 @@ const calculateWinner = (playerHand, computerHand) => {
 
 const play = (playerHand) => {
   let computerHand = generateComputerHand()
-  let possiblePlays = ['rock', 'paper', 'scissors']
   if (typeof playerHand !== 'string') {
     alert('Please enter "rock", "paper" or "scissors".')
   } else if (!possiblePlays.includes(playerHand.toLowerCase())) {
