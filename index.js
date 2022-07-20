@@ -73,13 +73,7 @@ const calculateWinner = (playerHand, computerHand) => {
 
 const play = (playerHand) => {
   let computerHand = generateComputerHand()
-  if (typeof playerHand !== 'string') {
-    alert('Please enter "rock", "paper" or "scissors".')
-  } else if (!possiblePlays.includes(playerHand.toLowerCase())) {
-    alert('Please enter "rock", "paper" or "scissors".')
-  } else {
-    calculateWinner(playerHand, computerHand)
-  }
+  calculateWinner(playerHand, computerHand)
 }
 
 const playRound = (playerHand) => {
